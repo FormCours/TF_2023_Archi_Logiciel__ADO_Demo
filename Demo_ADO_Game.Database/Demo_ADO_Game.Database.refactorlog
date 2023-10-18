@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="144f3ed8-ed81-4f0c-bedc-d8e9dc31e2c9" ChangeDateTime="10/18/2023 09:01:23">
+    <Property Name="ElementName" Value="[dbo].[PK_Studio]" />
+    <Property Name="ElementType" Value="SqlPrimaryKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Studio]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[PK_Studi]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="33af1bb9-343e-4076-b7c2-f09c67b0adf8" ChangeDateTime="10/18/2023 09:01:28">
+    <Property Name="ElementName" Value="[dbo].[PK_Studi]" />
+    <Property Name="ElementType" Value="SqlPrimaryKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Studio]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[PK_Studio]" />
+  </Operation>
+</Operations>
