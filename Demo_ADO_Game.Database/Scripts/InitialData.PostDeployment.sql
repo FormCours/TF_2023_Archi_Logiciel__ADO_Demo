@@ -44,3 +44,32 @@ INSERT INTO [GameGenre] ([Id], [GameId], [GenreId])
 		(6, 4, 1),
 		(7, 4, 2);
 SET IDENTITY_INSERT [GameGenre] OFF;
+
+
+-- Create new login
+USE [master]
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.sql_logins WHERE [name] = 'GameUser')
+ BEGIN
+	CREATE LOGIN [GameUser] 
+	WITH PASSWORD=N'Test1234=', 
+		 DEFAULT_DATABASE=[master], 
+		 CHECK_EXPIRATION=OFF, 
+		 CHECK_POLICY=OFF
+ END
+GO
+
+-- Create new user for login
+USE [GameDB]
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.sysusers WHERE [name] = 'GameUser')
+ BEGIN
+	CREATE USER [GameUser] FOR LOGIN [GameUser]
+ END
+GO
+
+ALTER ROLE [db_datareader] ADD MEMBER [GameUser]
+ALTER ROLE [db_datawriter] ADD MEMBER [GameUser]
+GO
